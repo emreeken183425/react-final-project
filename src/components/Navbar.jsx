@@ -4,11 +4,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-
+import cwLogo from '../assets/cw.jpeg'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -18,7 +17,15 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    color:"white",
+    fontSize:"25px"
   },
+  appBar:{
+    backgroundColor: "#2196f3"
+  },
+  logo:{
+    width:40
+  }
 }));
 
 export default function Navbar() {
@@ -39,13 +46,13 @@ export default function Navbar() {
   return (
     <div className={classes.root}>
       
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar} >
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+           <img className={classes.logo} src={cwLogo} alt="logo" />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Photos
+           <span>{" 🙂 < EMRE EKEN >  " }</span> BLOG  🙂
           </Typography>
           { 
             <div>
@@ -56,7 +63,7 @@ export default function Navbar() {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <AccountCircle />
+                <AccountCircle style={{fontSize:"40px"}} />
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -73,9 +80,8 @@ export default function Navbar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>New</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                <MenuItem onClick={handleClose}>Login</MenuItem>
+                <MenuItem onClick={handleClose}>Register</MenuItem>               
               </Menu>
             </div>
           }
