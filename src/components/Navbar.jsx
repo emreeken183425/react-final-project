@@ -8,6 +8,10 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import cwLogo from '../assets/cw.jpeg'
+import { Login } from '@mui/icons-material';
+
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -40,7 +44,7 @@ export default function Navbar() {
   };
 
   const handleClose = () => {
-    setAnchorEl(null);
+   
   };
 
   return (
